@@ -6,7 +6,7 @@ const CarrinhoStore = useCarrinhoStore();
 <template>
   <div class="carrinho">
     <h1>Carrinho</h1>
-    <h1 v-for="(item, index) in CarrinhoStore.itens" :key="index"> {{ item.nome }} </h1>
+    <h1 v-for="(item, index) in CarrinhoStore.itens" :key="index"> {{ item.nome }} {{item.qntCarrinho }} </h1>
   </div>
 </template>
 

@@ -14,9 +14,9 @@ export const useCarrinhoStore = defineStore('carrinho', () => {
   function adicionarAoCarrinho(item) {
     const ids = this.itens.map(objeto => objeto.id)
     if(ids.includes(item.id)){
-      item.quantidade++
+      item.qntCarrinho++
     }else{
-      item.quantidade = 1
+      item.qntCarrinho = 1
       itens.value.push(item)
     }
   }

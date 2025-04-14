@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useCarrinhoStore} from '@/stores/carrinhoStore';
 const carrinhoStore = useCarrinhoStore();
   const produtos = ref([
-     { id: 8, nome: 'Produto a', preco: 24.44, qntCarrinho:"1"},{ "id": 2, nome: 'Produto 1', preco: 24.44, qntCarrinho:"1"}
+     { id: 8, nome: 'Produto a', preco: 24.44, qntCarrinho:"0"},{ "id": 2, nome: 'Produto 1', preco: 24.44, qntCarrinho:"0"}
   ])
 </script>
 
