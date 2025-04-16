@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 
 export const useCarrinhoStore = defineStore('carrinho', () => {
   const itens = ref([
-     { id: 1, nome: 'Produto 1', preco: 24.44, qntCarrinho:"1"},{ "id": 2, nome: 'Produto 1', preco: 24.44, qntCarrinho:"1"}
   ])
   
   const count = ref(0)
