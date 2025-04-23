@@ -32,6 +32,7 @@ h1{
   font-size: larger;
   background-color: rgba(240, 248, 255, 0);
   font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 .jogar{
   color:white;
