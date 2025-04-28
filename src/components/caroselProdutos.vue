@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import produtoComponent from './produtoComponent.vue'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
@@ -11,9 +11,26 @@ const isSmallScreen = ref(window.innerWidth < 500)
 // Novo ref para largura atual
 const windowWidth = ref(window.innerWidth)
 
-// Computado para o itemsToShow baseado na largura da tela
-const itemsToShow = computed(() => (windowWidth.value < 700? 1.8:windowWidth.value < 930? 2.6: windowWidth.value < 1150? 3.4: windowWidth.value < 1350? 4.2 : 5))
+function updateWindowWidth() {
+  windowWidth.value = window.innerWidth
+}
 
+onMounted(() => {
+  window.addEventListener('resize', updateWindowWidth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWindowWidth)
+})
+
+const itemsToShow = computed(() => (
+  windowWidth.value < 350 ? 0.8 :
+  windowWidth.value < 500 ? 1.2 :
+  windowWidth.value < 700 ? 1.8 :
+  windowWidth.value < 930 ? 2.6 :
+  windowWidth.value < 1150 ? 3.4 :
+  windowWidth.value < 1350 ? 4.2 : 5
+))
 const carrinhoStore = useCarrinhoStore()
 const categorias = ref(['geracao1', 'geracao2', 'geracao3', 'terror'])
 

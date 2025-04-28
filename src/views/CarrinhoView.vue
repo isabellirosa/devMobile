@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useCarrinhoStore} from '@/stores/carrinhoStore';
 const CarrinhoStore = useCarrinhoStore();
 function createUrlImage(src) {
     return new URL(src, import.meta.url).href;
 }
+const totalCarrinho = computed(() => {
+  return CarrinhoStore.itens.reduce((acc, item) => {
+    return acc + (item.preco * item.qntCarrinho);
+  }, 0);
+})
 </script>
 <template>
   <div class="rota-atual">
@@ -45,7 +50,7 @@ function createUrlImage(src) {
 
     <div class="resumo-linha">
       <span>Total</span>
-      <span>R$1.000,00</span>
+      <span>R$ {{ totalCarrinho }},00</span>
     </div>
 
     <div class="resumo-frete">
@@ -241,7 +246,7 @@ function createUrlImage(src) {
       height: 175px;
   }
   .item {
-      border-bottom: 1px solid #A1A1A1;
+      border-bottom: 0px solid #A1A1A1;
       gap: 10px;
       padding-bottom: 10px;
       margin-bottom: 20px;

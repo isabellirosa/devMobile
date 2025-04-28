@@ -320,7 +320,7 @@ main .titulo{
   display: flex;
   position: absolute;
  flex-wrap: wrap;
-  left:31.5vw;
+  left:30.5vw;
   justify-content: center;
   align-items: center;
   font-size: 70px;

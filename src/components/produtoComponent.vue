@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from "vue";
+import { RouterLink } from "vue-router";
 const props = defineProps({
   produto: {
     type: Object,
@@ -22,7 +23,7 @@ function createUrlImage(src) {
                 <div>
                     <img class="estrelas" src="@/assets/imagens/estrelas.png" />
                     <div class="comprar">
-                <span>R$ {{ produto.preco }},00</span>   <button @click="() => emit('carrinho', produto)" >Comprar</button></div>
+                <span>R$ {{ produto.preco }},00</span>   <RouterLink to="/carrinho"><button @click="() => emit('carrinho', produto)" >Comprar</button></RouterLink></div>
             </div></div>
 </template>
 <style scoped>
@@ -57,6 +58,12 @@ span, button{
     width: 250px;
     margin-bottom: 10px;
 }
+.produto-img:hover{
+  transform: scaleX(-1);
+}
+
+
+
 .estrelas{
     display: block;
     height: 13px;
@@ -66,7 +73,7 @@ span, button{
     color: white;
     text-decoration: none;
     background-color: rgba(240, 248, 255, 0);
-    padding: 0px 15px;
+    padding: 5px 15px;
     border: 1px solid white;
     border-radius: 20px;
     cursor: pointer;
