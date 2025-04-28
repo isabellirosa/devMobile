@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import produtosComponent from '@/components/produtosComponent.vue';
+import caroselProdutos from '@/components/caroselProdutos.vue';
 </script>
 
 <template>
   <main>
     <img class="home-img" src="@/assets/imagens/image copy.png"/>
-    <produtosComponent/>
+    <caroselProdutos/>
   </main>
 </template>
 
 <style scoped>
 .home-img{
-  width: 100vw;
+  width: 100%;
 }
 </style>
