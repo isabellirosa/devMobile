@@ -261,6 +261,9 @@ h1 {
     margin-bottom: 40px;
     margin-top: 0px;
     text-align: left;
+    font-family: 'MonsterHigh', cursive;
+    letter-spacing: 3px;
+    font-weight: 200;
   }
   .categoria-titulo{
     padding-left:20px;
